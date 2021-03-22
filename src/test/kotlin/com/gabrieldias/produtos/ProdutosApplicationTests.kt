@@ -1,4 +1,4 @@
-package com.gabrieldias.Produtos
+package com.gabrieldias.produtos
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

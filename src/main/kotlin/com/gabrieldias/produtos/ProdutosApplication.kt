@@ -1,4 +1,4 @@
-package com.gabrieldias.Produtos
+package com.gabrieldias.produtos
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
