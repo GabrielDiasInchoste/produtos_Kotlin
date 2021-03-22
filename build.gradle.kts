@@ -27,6 +27,7 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation ("javax.validation:validation-api:2.0.1.Final")
 	implementation ("org.slf4j:slf4j-api:1.7.25")
+	implementation ("com.h2database:h2:1.3.148")
 
 }
 
