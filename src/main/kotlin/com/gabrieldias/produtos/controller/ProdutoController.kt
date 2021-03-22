@@ -16,7 +16,7 @@ class ProdutoController (
       ){
 
     @GetMapping(value = ["produto/{produtoId}"], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun getProduto(@PathVariable(value = "produtoId") produtoId: Long): ResponseEntity<ProdutoEntity?>? {
+    fun getProduto(@PathVariable(value = "produtoId") produtoId: Int): ResponseEntity<ProdutoEntity?>? {
         return ResponseEntity.status(HttpStatus.OK)
             .contentType(MediaType.APPLICATION_JSON)
             .body(produtoService.getProduto(produtoId))
@@ -30,14 +30,14 @@ class ProdutoController (
     }
 
     @PutMapping(value = ["produto/{produtoId}"], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun putProduto(@PathVariable(value = "produtoId") produtoId: Long,@RequestBody @Valid produtoEntity: ProdutoEntity): ResponseEntity<ProdutoEntity?>? {
+    fun putProduto(@PathVariable(value = "produtoId") produtoId: Int,@RequestBody @Valid produtoEntity: ProdutoEntity): ResponseEntity<ProdutoEntity?>? {
         return ResponseEntity.status(HttpStatus.OK)
             .contentType(MediaType.APPLICATION_JSON)
             .body(produtoService.putProduto(produtoEntity))
     }
 
     @DeleteMapping(value = ["produto/{produtoId}"], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun deleteProduto(@PathVariable(value = "produtoId") produtoId: Long): ResponseEntity.BodyBuilder {
+    fun deleteProduto(@PathVariable(value = "produtoId") produtoId: Int): ResponseEntity.BodyBuilder {
         produtoService.deleteProduto(produtoId)
         return ResponseEntity.status(HttpStatus.OK)
             .contentType(MediaType.APPLICATION_JSON)

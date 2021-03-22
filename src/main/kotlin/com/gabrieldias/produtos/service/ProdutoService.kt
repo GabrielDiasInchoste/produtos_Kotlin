@@ -8,27 +8,28 @@ import org.springframework.stereotype.Service
 @Slf4j
 @Service
 class ProdutoService(
-    private val produtoRepository : ProdutoRepository
-){
+    private val produtoRepository: ProdutoRepository
+) : ProdutoInterface {
 
-    fun getProduto(produtoId : Long): ProdutoEntity{
+    override fun getProduto(produtoId: Int): ProdutoEntity {
 //        log.info("ProdutoService.getProduto - start - produtoId: {$produtoId}")
 
         val produtoEntity = produtoRepository.findById(produtoId)
 //        log.info("ProdutoService.getProduto - end - produtoId: {$produtoId}")
 
-        if (!produtoEntity.isEmpty){
+        if (!produtoEntity.isEmpty) {
             return produtoEntity.get()
         } else throw Exception()
 
     }
-    fun putProduto(produto: ProdutoEntity): ProdutoEntity{
+
+    override fun putProduto(produto: ProdutoEntity): ProdutoEntity {
 //        log.info("ProdutoService.putProduto - start - produtoId: {$produtoId}")
 
-        val produtoEntity = produtoRepository.findById(produto.id.toLong())
+        val produtoEntity = produtoRepository.findById(produto.id)
 //        log.info("ProdutoService.putProduto - end - produtoId: {$produtoId}")
 
-        if (produtoEntity.isEmpty){
+        if (produtoEntity.isEmpty) {
             throw Exception()
         } else {
             // FAZER MAPPER
@@ -36,18 +37,20 @@ class ProdutoService(
         }
 
     }
-    fun postProduto(produto : ProdutoEntity): ProdutoEntity{
+
+    override fun postProduto(produto: ProdutoEntity): ProdutoEntity {
 //        log.info("ProdutoService.postProduto - start - produtoId: {$produtoId}")
 
-        val produtoEntity = produtoRepository.findById(produto.id.toLong())
+        val produtoEntity = produtoRepository.findById(produto.id)
 //        log.info("ProdutoService.postProduto - end - produtoId: {$produtoId}")
 
-        if (produtoEntity.isEmpty){
+        if (produtoEntity.isEmpty) {
             return produtoRepository.save(produtoEntity.get())
         } else throw Exception()
 
     }
-    fun deleteProduto(produtoId : Long) {
+
+    override fun deleteProduto(produtoId: Int) {
 //        log.info("ProdutoService.getProduto - start - produtoId: {$produtoId}")
 
         val produtoEntity = produtoRepository.findById(produtoId)
