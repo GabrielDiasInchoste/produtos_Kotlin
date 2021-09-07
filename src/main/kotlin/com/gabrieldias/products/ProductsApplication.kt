@@ -1,11 +1,11 @@
-package com.gabrieldias.produtos
+package com.gabrieldias.products
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class ProdutosApplication
+class ProductsApplication
 
 fun main(args: Array<String>) {
-	runApplication<ProdutosApplication>(*args)
+    runApplication<ProductsApplication>(*args)
 }
