@@ -11,7 +11,7 @@ data class ProductDTO(
     @NotBlank(message = "Descricao nao informada")
     val descricao: String,
     @NotNull(message = "Quantidade nao informado")
-    val quantidate: Double,
+    val quantidate: Int,
     @NotNull(message = "Preco nao informado")
     val preco: Double
 )

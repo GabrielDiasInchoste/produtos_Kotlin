@@ -32,6 +32,11 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.4")
     testImplementation("io.mockk:mockk:1.12.0")
     testImplementation("io.kotest:kotest-assertions-core-jvm:4.6.2")
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.6.2")
+    testImplementation("io.kotest:kotest-property-jvm:4.6.2")
+    testImplementation("io.kotest:kotest-extensions-spring:4.4.3")
+    testImplementation("com.ninja-squad:springmockk:2.0.1")
+
 
 }
 
