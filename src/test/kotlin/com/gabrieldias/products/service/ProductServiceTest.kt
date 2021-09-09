@@ -45,7 +45,7 @@ class ProductServiceTest {
     }
 
     @Test
-    fun `should throw exception create product successfully`() {
+    fun `should throw exception with create product successfully`() {
         every { repositoryPostgresImpl.findProductById(any()) } returns Optional.of(builderTest.productEntity)
 
         val response = shouldThrowExactly<Exception> { productService.postProduct(builderTest.productDTO) }
@@ -69,6 +69,7 @@ class ProductServiceTest {
         every { repositoryPostgresImpl.delete(any()) } just Runs
 
         shouldNotThrowAny { productService.deleteProduct(builderTest.productId) }
+        verify(exactly = 1) { repositoryPostgresImpl.delete(any()) }
 
     }
 }

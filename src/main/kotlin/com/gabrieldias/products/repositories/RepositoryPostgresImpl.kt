@@ -4,8 +4,10 @@ import com.gabrieldias.products.dto.ProductDTO
 import com.gabrieldias.products.dto.toDTO
 import com.gabrieldias.products.dto.toEntity
 import com.gabrieldias.products.entity.ProductEntity
+import org.springframework.stereotype.Service
 import java.util.*
 
+@Service
 class RepositoryPostgresImpl(
     private val productRepository: ProductRepository
 ) {
