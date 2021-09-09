@@ -22,6 +22,14 @@ class BuilderTest {
         preco = 899.99
     )
 
+    val validateProductDTO = ProductDTO(
+        id = 1,
+        nome = "Cadeira",
+        descricao = "Cadeira Gamer",
+        quantidate = 15,
+        preco = 899.99
+    )
+
     val productEntity = ProductEntity(
         id = 1,
         nome = "TV",

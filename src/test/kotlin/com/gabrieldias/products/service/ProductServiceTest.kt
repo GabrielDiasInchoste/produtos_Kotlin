@@ -61,7 +61,7 @@ class ProductServiceTest {
 
         val response = shouldNotThrowAny { productService.putProduct(builderTest.putProductDTO) }
 
-        response shouldBe builderTest.putProductDTO
+        response shouldBe builderTest.validateProductDTO
     }
 
     @Test
