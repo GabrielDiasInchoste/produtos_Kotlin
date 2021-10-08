@@ -10,9 +10,9 @@ data class ProductDTO(
     val nome: String,
     @NotBlank(message = "Descricao nao informada")
     val descricao: String,
-    @NotNull(message = "Quantidade nao informado")
-    val quantidate: Int,
-    @NotNull(message = "Preco nao informado")
+
+    val quantidade: Int,
+
     val preco: Double
 )
 
@@ -21,7 +21,7 @@ fun ProductDTO.toEntity(): ProductEntity {
         id = id,
         nome = nome,
         descricao = descricao,
-        quantidate = quantidate,
+        quantidade = quantidade,
         preco = preco
     )
 }
@@ -31,7 +31,7 @@ fun ProductEntity.toDTO(): ProductDTO {
         id = id,
         nome = nome,
         descricao = descricao,
-        quantidate = quantidate,
+        quantidade = quantidade,
         preco = preco
     )
 }

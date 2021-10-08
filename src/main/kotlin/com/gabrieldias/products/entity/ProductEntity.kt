@@ -17,7 +17,7 @@ data class ProductEntity(
     val descricao: String,
 
     @Column(name = "QUANTIDADE")
-    val quantidate: Int,
+    val quantidade: Int,
 
     @Column(name = "PRECO")
     val preco: Double
