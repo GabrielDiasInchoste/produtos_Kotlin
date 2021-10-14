@@ -10,7 +10,7 @@ class BuilderTest {
         id = 1,
         nome = "TV",
         descricao = "TV 50 Polegada",
-        quantidate = 10,
+        quantidade = 10,
         preco = 1099.50
     )
 
@@ -18,7 +18,7 @@ class BuilderTest {
         id = 1,
         nome = "Cadeira",
         descricao = "Cadeira Gamer",
-        quantidate = 15,
+        quantidade = 15,
         preco = 899.99
     )
 
@@ -26,7 +26,7 @@ class BuilderTest {
         id = 1,
         nome = "Cadeira",
         descricao = "Cadeira Gamer",
-        quantidate = 15,
+        quantidade = 15,
         preco = 899.99
     )
 
@@ -34,7 +34,7 @@ class BuilderTest {
         id = 1,
         nome = "TV",
         descricao = "TV 50 Polegada",
-        quantidate = 10,
+        quantidade = 10,
         preco = 1099.50
     )
 
