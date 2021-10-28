@@ -28,6 +28,7 @@ dependencies {
     implementation("com.h2database:h2:1.4.200")
     implementation("io.springfox:springfox-swagger2:2.9.2")
     implementation("io.springfox:springfox-swagger-ui:2.9.2")
+    implementation ("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.5")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.4")
     testImplementation("io.mockk:mockk:1.12.0")
@@ -36,6 +37,8 @@ dependencies {
     testImplementation("io.kotest:kotest-property-jvm:4.6.2")
     testImplementation("io.kotest:kotest-extensions-spring:4.4.3")
     testImplementation("com.ninja-squad:springmockk:2.0.1")
+
+    testImplementation("io.rest-assured:rest-assured:4.4.0")
 
 
 }

@@ -13,40 +13,58 @@ class ProductServiceImpl(
 
     override fun getProduct(productId: Int): ProductDTO {
         log.info("ProductService.getProduct - start - productId: $productId")
+        try {
 
-        val productDTO = repositoryPostgresImpl.findProductByIdOrThrow(productId)
-
-        log.info("ProductService.getProduct - end - productDTO: $productDTO")
-        return productDTO
-
+            val productDTO = repositoryPostgresImpl.findProductByIdOrThrow(productId)
+            log.info("ProductService.getProduct - end - productDTO: $productDTO")
+            return productDTO
+        } catch (ex: Exception) {
+            log.error("ProductService.getProduct - Error : ${ex.message}", ex)
+            throw ex
+        }
     }
 
     override fun putProduct(productRequest: ProductDTO): ProductDTO {
-        log.info("ProductService.putProduct - start - product: $productRequest")
+        try {
+            log.info("ProductService.putProduct - start - product: $productRequest")
 
-        repositoryPostgresImpl.findProductByIdOrThrow(productRequest.id)
-        val productDTO = repositoryPostgresImpl.saveProduct(productRequest)
+            repositoryPostgresImpl.findProductByIdOrThrow(productRequest.id)
+            val productDTO = repositoryPostgresImpl.saveProduct(productRequest)
 
-        log.info("ProductService.postProduct - end - product: $productDTO")
-        return productDTO
+            log.info("ProductService.putProduct - end - product: $productDTO")
+            return productDTO
+        } catch (ex: Exception) {
+            log.error("ProductService.putProduct - Error : ${ex.message}", ex)
+            throw ex
+        }
     }
 
     override fun postProduct(productRequest: ProductDTO): ProductDTO {
-        log.info("ProductService.postProduct - start - product: $productRequest")
+        try {
+            log.info("ProductService.postProduct - start - product: $productRequest")
 
-        repositoryPostgresImpl.findProductById(productRequest.id).ifPresent {
-            throw Exception("ProductService.postProduct - Error product already registered - productId: $productRequest")
+            repositoryPostgresImpl.findProductById(productRequest.id).ifPresent {
+                throw Exception("ProductService.postProduct - Error product already registered - productId: $productRequest")
+            }
+            val productDTO = repositoryPostgresImpl.saveProduct(productRequest)
+            log.info("ProductService.postProduct - end - product: $productDTO")
+            return productDTO
+        } catch (ex: Exception) {
+            log.error("ProductService.postProduct - Error : ${ex.message}", ex)
+            throw ex
         }
-        val productDTO = repositoryPostgresImpl.saveProduct(productRequest)
-        log.info("ProductService.postProduct - end - product: $productDTO")
-        return productDTO
     }
 
     override fun deleteProduct(productId: Int) {
-        log.info("ProductService.getProduct - start - productId: $productId")
+        try {
+            log.info("ProductService.deleteProduct - start - productId: $productId")
 
-        repositoryPostgresImpl.delete(productId)
+            repositoryPostgresImpl.delete(productId)
 
-        log.info("ProductService.getProduct - end - productId: $productId")
+            log.info("ProductService.deleteProduct - end - productId: $productId")
+        } catch (ex: Exception) {
+            log.error("ProductService.deleteProduct - Error : ${ex.message}", ex)
+            throw ex
+        }
     }
 }

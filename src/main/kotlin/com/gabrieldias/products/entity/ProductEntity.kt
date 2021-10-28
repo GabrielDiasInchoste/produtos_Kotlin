@@ -5,9 +5,8 @@ import javax.persistence.*
 @Entity
 data class ProductEntity(
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "productId")
     @Id
+    @Column(name = "productId")
     val id: Int,
 
     @Column(name = "NOME")

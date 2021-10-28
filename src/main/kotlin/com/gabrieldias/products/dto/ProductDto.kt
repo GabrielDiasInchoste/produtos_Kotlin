@@ -2,7 +2,6 @@ package com.gabrieldias.products.dto
 
 import com.gabrieldias.products.entity.ProductEntity
 import javax.validation.constraints.NotBlank
-import javax.validation.constraints.NotNull
 
 data class ProductDTO(
     val id: Int,
